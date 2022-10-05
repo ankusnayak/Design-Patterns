@@ -17,15 +17,19 @@ class Journal:
     def __str__(self):
         return '\n'.join(self.entries)
 
-    def save(self,filename):
-        file=open(filename,'w')
-        file.write(str(self))
-        file.close()
+    #This code will be anti-patterns if we add the below this to this class as this not anymore be a single responsible class. 
 
-    def load(self,filename):
-        pass
-    def load_from_web(self,filename):
-        pass
+    #So single responsible objects prevents you to makeing a god object. and it enforces that idea that a class must have to be a single reason to change and it should be some how related to its primary responsibility.
+
+    # def save(self,filename):
+    #     file=open(filename,'w')
+    #     file.write(str(self))
+    #     file.close()
+
+    # def load(self,filename):
+    #     pass
+    # def load_from_web(self,filename):
+    #     pass
 
 class PersistanceManager:
     @staticmethod
